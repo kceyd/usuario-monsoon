@@ -164,6 +164,7 @@ Todos bajo el prefijo `/api/v0/usuarios` (requieren JWT, salvo se indique lo con
 
 ```
 GET http://localhost:8082/api/v0/usuarios/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...
 ```
 
 ### Ejemplo de respuesta (con HATEOAS)
