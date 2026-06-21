@@ -21,11 +21,11 @@ public class SEGURIDADmoonsoon {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/auth/**").permitAll()                 // login y registro son publicos
-                .requestMatchers("/swagger-ui/**").permitAll()           // pagina de swagger
-                .requestMatchers("/v3/api-docs/**").permitAll()          // json que usa swagger
-                .requestMatchers("/swagger-resources/**").permitAll()    // recursos de swagger
-                .anyRequest().authenticated()                            // todo lo demas necesita token
+                .requestMatchers("/auth/**").permitAll()                 
+                .requestMatchers("/swagger-ui/**").permitAll()          
+                .requestMatchers("/v3/api-docs/**").permitAll()        
+                .requestMatchers("/swagger-resources/**").permitAll()   
+                .anyRequest().authenticated()                            
             )
             .sessionManagement(session -> session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

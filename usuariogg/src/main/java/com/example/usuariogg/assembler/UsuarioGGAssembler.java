@@ -28,10 +28,10 @@ public class UsuarioGGAssembler extends RepresentationModelAssemblerSupport<Usua
             entity.getRol()
         );
 
-        // Link hacia el propio recurso: GET /api/v0/usuarios/{id}
+       
         dto.add(linkTo(methodOn(controladorusuario.class).obtenerUsuario(entity.getId())).withSelfRel());
 
-        // Link hacia la coleccion completa: GET /api/v0/usuarios
+       
         dto.add(linkTo(methodOn(controladorusuario.class).obtenerUsuarios()).withRel("usuarios"));
 
         return dto;

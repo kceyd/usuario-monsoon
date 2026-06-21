@@ -10,10 +10,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "usuarios") // Ajusta al nombre de tu tabla en MySQL si es diferente
-@Data                     // <-- Genera automáticamente todos los Getters y Setters
-@NoArgsConstructor        // <-- Genera el constructor vacío obligatorio para JPA
-@AllArgsConstructor       // <-- Genera el constructor con todos los atributos
+@Table(name = "usuarios") 
+@Data                    
+@NoArgsConstructor      
+@AllArgsConstructor       
 public class Usuario {
 
     @Id

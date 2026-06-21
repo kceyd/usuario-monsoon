@@ -18,7 +18,7 @@ public class Swaggerusuario {
                         .title("API de Usuarios GG - Monsoon")
                         .version("1.0")
                         .description("Documentación interactiva de la API con soporte para JWT y HATEOAS"))
-                // Activa el candado de seguridad global para los endpoints protegidos
+                
                 .addSecurityItem(new SecurityRequirement().addList(nombreEsquemaSeguridad))
                 .components(new Components()
                         .addSecuritySchemes(nombreEsquemaSeguridad,

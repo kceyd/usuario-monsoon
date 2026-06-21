@@ -19,14 +19,14 @@ public class authcontrolador {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String, String> loginRequest) {
         try {
-            // Extraemos los datos del JSON de forma manual sin usar la clase usuario
+           
             String nombreUsuario = loginRequest.get("nombreUsuario");
             
             if (nombreUsuario == null || nombreUsuario.isEmpty()) {
                 nombreUsuario = "usuarioPrueba";
             }
             
-            // Generamos el token usando tu JWTUTIL
+           
             String tokenReal = jwtUtil.generarToken(nombreUsuario);
             
             return ResponseEntity.ok(Map.of(

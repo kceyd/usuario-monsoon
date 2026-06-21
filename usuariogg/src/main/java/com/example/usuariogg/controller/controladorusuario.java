@@ -36,8 +36,7 @@ public class controladorusuario {
     @Autowired
     private UsuarioGGAssembler assembler;
 
-    // Devuelve la lista de usuarios, cada uno con sus links HATEOAS
-    // y un link "self" para la coleccion completa
+    
     @GetMapping
     public ResponseEntity<CollectionModel<UsuarioGGDTO>> obtenerUsuarios() {
         List<UsuarioGGDTO> usuarios = usuarioService.obtenerUsuarios().stream()
