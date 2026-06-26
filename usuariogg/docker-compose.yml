@@ -1,5 +1,6 @@
-services:
+version: '3.8'
 
+services:
   db-usuario:
     image: mysql:8.0
     container_name: mysql-usuario-container
@@ -7,7 +8,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: usuariogg_db
     ports:
-      - "3307:3306"
+      - "3307:3306" # 👈 Expone el 3307 hacia afuera para no chocar con tu MySQL de Windows
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
@@ -25,9 +26,9 @@ services:
       - "8082:8082"
     depends_on:
       db-usuario:
-        condition: service_healthy
+        condition: service_healthy # 👈 Espera a que el mysql de Docker esté 100% listo antes de lanzar la app
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db-usuario:3306/usuariogg_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+      SPRING_DATASOURCE_URL: jdbc:mysql://db-usuario:3306/usuariogg_db?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
